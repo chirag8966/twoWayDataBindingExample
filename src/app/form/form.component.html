@@ -1,0 +1,51 @@
+<section id="input" *ngIf="!display" class="fullWidth">
+    <div>
+        <p>first name</p>
+        <input type="text" [(ngModel)]="form.name" >
+    </div>
+    <div>
+        <p>last name</p>
+        <input type="text" [(ngModel)]="form.lName">
+    </div>
+    <div>
+        <p>address</p>
+        <textarea name="address" id="address" cols="30" rows="10" [(ngModel)]="form.address"></textarea>
+    </div>
+    <div>
+        <p>contact number</p>
+        <input type="tel" [(ngModel)]="form.contactNumber" >
+    </div>
+    <div>
+        <p>table input</p>
+        <input type="tel" [(ngModel)]="form.tableIterator">
+    </div>
+    <div>
+        <button type="button" (click)="SaveForm()">submit</button>
+    </div>
+</section>
+
+<section id="display" *ngIf="display">
+    <div>
+        <p>first name : </p>
+        <span> {{ form.name }} </span>
+    </div>
+    <div>
+        <p>last name</p>
+        <span> {{ form.lName }} </span>
+    </div>
+    <div>
+        <p>address</p>
+        <span> {{ form.address }} </span>
+    </div>
+    <div>
+        <p>contact number</p>
+        <span> {{ form.contactNumber }}</span>
+    </div>
+    <div>
+        <p>table input</p> <br>
+        <app-table [value]="form.tableIterator"></app-table>
+    </div>
+    <div>
+        <button type="button" (click)="refreshPage()">refresh</button>
+    </div>
+</section>
